@@ -20,7 +20,9 @@ beforeAll(async () => {
   //   await mongo.start();
   process.env.JWT_KEY = 'testingKey';
   //   const mongoUri = mongo.getUri();
-  await mongoose.connect('mongodb://127.0.0.1:27017/auth');
+  await mongoose.connect(
+    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/test'
+  );
 });
 
 beforeEach(async () => {
