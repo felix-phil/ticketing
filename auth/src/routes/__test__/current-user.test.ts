@@ -8,7 +8,7 @@ it('responds with current user details', async () => {
     .get('/api/users/currentuser')
     .set('Cookie', cookie)
     .send({})
-    .expect(200);
+    .expect(400); //testing github ci
 
   expect(res.body.currentUser.email).toEqual('test@test.com');
   expect(res.body.currentUser.id).toBeDefined();
