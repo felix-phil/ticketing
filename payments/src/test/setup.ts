@@ -22,7 +22,7 @@ beforeAll(async () => {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
   //   const mongoUri = mongo.getUri();
   await mongoose.connect(
-    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/test'
+    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/payments'
   );
 });
 

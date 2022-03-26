@@ -18,7 +18,7 @@ beforeAll(async () => {
 
   // await mongoose.connect('mongodb://127.0.0.1:27017/tickets');
   await mongoose.connect(
-    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/test'
+    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/orders'
   );
 });
 

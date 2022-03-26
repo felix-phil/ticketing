@@ -18,7 +18,7 @@ beforeAll(async () => {
   process.env.JWT_KEY = 'testingKey';
   //   const mongoUri = mongo.getUri();
   await mongoose.connect(
-    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/test'
+    'mongodb+srv://ticketinguser:ticketinguser@ticketing.yc8tr.mongodb.net/tickets'
   );
 });
 
