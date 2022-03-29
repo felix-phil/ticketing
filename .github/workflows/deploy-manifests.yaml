@@ -1,0 +1,24 @@
+name: deploy-manifests
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'infra/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      - uses: azure/aks-set-context@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}       
+          cluster-name: 'felix-kub-cluster'
+          resource-group: 'felix-cluster'
+      - run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod
