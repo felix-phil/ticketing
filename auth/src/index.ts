@@ -5,7 +5,7 @@ import { app } from './app';
 const PORT: number = 3000;
 
 const start = async () => {
-  console.log('Starting up...');
+  console.log('Starting up......');
 
   if (!process.env.JWT_KEY) {
     throw new Error('JWT_KEY env variable must be defined');
