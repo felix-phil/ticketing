@@ -4,6 +4,8 @@ import { OrderCreatedListener } from './events/listeners/order-created-listener'
 const PORT: number = 3000;
 
 const start = async () => {
+  console.log('Starting up...');
+
   if (!process.env.NATS_CLIENT_ID) {
     throw new Error('NATS_CLIENT_ID env variable must be defined');
   }
