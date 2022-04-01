@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import StripeCheckout from 'react-stripe-checkout';
 import useRequest from '../../hooks/use-request';
 import Router from 'next/router';
+import StripeCheckout from '../../components/StripeCheckout';
 
 const OrderShow = ({ order, currentUser }) => {
   const [timeLeft, setTimeLeft] = useState(0);
@@ -34,16 +34,9 @@ const OrderShow = ({ order, currentUser }) => {
       Time left to pay {timeLeft} {timeLeft === 1 ? 'second' : 'seconds'}
       <StripeCheckout
         token={({ id }) => doRequest({ token: id })}
-        stripeKey="pk_test_51KfZvWH6hCIDmUaTrKc5pQ5i2iw5w9jqYgLFweZEhM0Go3FNpw9sMQJX15PJXIF5yIbK27quGepcxjrXpo0gRbB000iQsOxVfG"
         amount={order.ticket.price * 100}
         email={currentUser.email}
       />
-      {/* <button
-        className="btn btn-primary"
-        onClick={() => doRequest({ token: 'tok_visa' })}
-      >
-        Pay with card
-      </button> */}
       {errors}
     </div>
   );
